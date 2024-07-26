@@ -5,36 +5,30 @@
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
+
 body {
-    background-color: #f4f4f4;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f4;
     color: #333;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
 header {
-    background: linear-gradient(90deg, #ff8c00, #ff0080);
-    color: #fff;
-    padding: 1rem 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 1000;
+    background: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0 2rem;
+    height: 80px;
 }
 
-.logo a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
+.logo img {
+    height: 50px;
+    width: auto;
 }
 
 #mobile-menu {
@@ -43,39 +37,60 @@ nav {
 }
 
 #mobile-menu div {
-    width: 25px;
+    width: 30px;
     height: 3px;
     background: #fff;
-    margin: 5px;
+    margin: 6px;
     transition: all 0.3s ease;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    margin: 0 1rem;
+    margin: 0 1.5rem;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #ffeb3b;
+    color: #f0a500;
 }
 
-.nav-active {
-    display: flex;
-    flex-direction: column;
+@media (max-width: 768px) {
+    #mobile-menu {
+        display: block;
+    }
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: #333;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    #nav-links.nav-active {
+        display: flex;
+    }
+    nav ul li {
+        margin: 1rem 0;
+        text-align: center;
+    }
+    nav ul li a {
+        font-size: 1.5rem;
+    }
 }
-
 main {
     flex: 1;
 }
