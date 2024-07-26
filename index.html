@@ -264,6 +264,29 @@
                 });
             });
         });
+        document.addEventListener('DOMContentLoaded', () => {
+            const trustItems = document.querySelectorAll('.trust-item');
+            let currentIndex = 0;
+
+            const updateVisibility = () => {
+                trustItems.forEach((item, index) => {
+                    item.classList.toggle('active', index === currentIndex);
+                });
+            };
+
+            document.getElementById('next-btn').addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % trustItems.length;
+                updateVisibility();
+            });
+
+            document.getElementById('prev-btn').addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + trustItems.length) % trustItems.length;
+                updateVisibility();
+            });
+
+            // Initial setup
+            updateVisibility();
+        });
     </script>
 </body>
 </html>
