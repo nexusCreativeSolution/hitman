@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = htmlspecialchars($_POST["message"]);
 
     $mgClient = Mailgun::create(' 49c2edf5d6ef3bd362022c8ec041238f-0f1db83d-1ace9c39'); // Replace with your Mailgun API Key
-    $domain = 'your-domain.com'; // Replace with your Mailgun domain
+    $domain = 'sandbox02d66151b5cd447f98434957027dc9cf.mailgun.org?'; // Replace with your Mailgun domain
 
     $params = [
         'from'    => $email,
