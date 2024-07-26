@@ -1,22 +1,26 @@
 <?php
+require 'vendor/autoload.php'; // Load Composer's autoloader
+
+use SendGrid\Mail\Mail;
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST["name"]);
     $email = htmlspecialchars($_POST["email"]);
     $message = htmlspecialchars($_POST["message"]);
 
-    // Send email (you can configure this according to your email server)
-    $to = "nexuscreativesolution@gmail.com"; // Replace with your email address
-    $subject = "New Contact Form Submission";
-    $headers = "From: " . $email;
+    $sendgrid = new \SendGrid('49c2edf5d6ef3bd362022c8ec041238f-0f1db83d-1ace9c39');
+    $email = new Mail();
+    $email->setFrom($email, $name);
+    $email->setSubject("New Contact Form Submission");
+    $email->addTo("nexuscreativesolution@gmail.com"); // Replace with your email address
+    $email->addContent("text/plain", "Name: $name\nEmail: $email\n\nMessage:\n$message");
 
-    $mailBody = "Name: $name\nEmail: $email\n\nMessage:\n$message";
-
-    if (mail($to, $subject, $mailBody, $headers)) {
+    try {
+        $response = $sendgrid->send($email);
         echo "Thank you, $name. Your message has been sent.";
-    } else {
-        echo "Sorry, something went wrong. Please try again later.";
+    } catch (Exception $e) {
+        echo 'Error: ' . $e->getMessage();
     }
 } else {
     echo "Invalid request.";
 }
-?>
