@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = htmlspecialchars($_POST["message"]);
 
     // Send email (you can configure this according to your email server)
-    $to = "publicbot34@gmail.com"; // Replace with your email address
+    $to = "nexuscreativesolution@gmail.com"; // Replace with your email address
     $subject = "New Contact Form Submission";
     $headers = "From: " . $email;
 
