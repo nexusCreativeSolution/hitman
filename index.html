@@ -214,80 +214,58 @@
  
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const prevButton = document.querySelector('.carousel-button.prev');
-            const nextButton = document.querySelector('.carousel-button.next');
-            const carouselSlide = document.querySelector('.carousel-slide');
-            const images = document.querySelectorAll('.carousel-slide img');
-            let counter = 0;
-            const size = images[0].clientWidth;
+    // Carousel buttons
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const nextButton = document.querySelector('.carousel-button.next');
+    const carouselSlide = document.querySelector('.carousel-slide');
+    const images = document.querySelectorAll('.carousel-slide img');
+    let counter = 0;
+    const size = images[0].clientWidth;
 
-            nextButton.addEventListener('click', () => {
-                if (counter >= images.length - 1) return;
-                carouselSlide.style.transition = "transform 0.5s ease-in-out";
-                counter++;
-                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    nextButton.addEventListener('click', () => {
+        if (counter >= images.length - 1) return;
+        carouselSlide.style.transition = "transform 0.5s ease-in-out";
+        counter++;
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (counter <= 0) return;
+        carouselSlide.style.transition = "transform 0.5s ease-in-out";
+        counter--;
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    });
+
+    // Mobile menu
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    mobileMenu.addEventListener('click', function() {
+        navLinks.classList.toggle('nav-active');
+        mobileMenu.classList.toggle('toggle');
+    });
+
+    // FAQ questions
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const parentItem = question.parentElement;
+            const isActive = parentItem.classList.contains('active');
+
+            // Close all other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
             });
 
-            prevButton.addEventListener('click', () => {
-                if (counter <= 0) return;
-                carouselSlide.style.transition = "transform 0.5s ease-in-out";
-                counter--;
-                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-            });
-        });document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const navLinks = document.getElementById('nav-links');
-
-            mobileMenu.addEventListener('click', function() {
-                navLinks.classList.toggle('nav-active');
-                mobileMenu.classList.toggle('toggle');
-            });
+            // Open the clicked FAQ if it was not already open
+            if (!isActive) {
+                parentItem.classList.add('active');
+            }
         });
+    });
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqQuestions = document.querySelectorAll('.faq-question');
-
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', () => {
-                    const parentItem = question.parentElement;
-                    const isActive = parentItem.classList.contains('active');
-
-                    // Close all other FAQs
-                    document.querySelectorAll('.faq-item').forEach(item => {
-                        item.classList.remove('active');
-                    });
-
-                    // Open the clicked FAQ if it was not already open
-                    if (!isActive) {
-                        parentItem.classList.add('active');
-                    }
-                });
-            });
-        });
-        document.addEventListener('DOMContentLoaded', () => {
-            const trustItems = document.querySelectorAll('.trust-item');
-            let currentIndex = 0;
-
-            const updateVisibility = () => {
-                trustItems.forEach((item, index) => {
-                    item.classList.toggle('active', index === currentIndex);
-                });
-            };
-
-            document.getElementById('next-btn').addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % trustItems.length;
-                updateVisibility();
-            });
-
-            document.getElementById('prev-btn').addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + trustItems.length) % trustItems.length;
-                updateVisibility();
-            });
-
-            // Initial setup
-            updateVisibility();
-        });
-        document.addEventListener('DOMContentLoaded', () => {
+    // Trust items
     const trustItems = document.querySelectorAll('.trust-item');
     let currentIndex = 0;
 
