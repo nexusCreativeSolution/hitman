@@ -1,385 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="description" content="Nexus Creative Solution offers top-notch web development, flyer creation, and bot development services.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexus Creative Solution</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <a href="#home"><img src="https://telegra.ph/file/fcba5565c434703e8244c.jpg" alt="Nexus Creative Solution Logo"></a>
-            </div>
-            <div id="mobile-menu" class="mobile-menu">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-            <ul id="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+      <div class="branding">Nexus<span>Creative Solution</span></div>
+      <div class="hamburger-icon">
+          <span></span>
+      </div>
+      <div class="nav">
+          <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#showcase">Services</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#testimonial">Testimonials</a></li>
+              <li><a href="#contact">Contact</a></li>
+          </ul>
+      </div>
     </header>
-    <main>
-        <div id="home" class="page">
-            <section class="home-section">
-                <h1>Welcome to Nexus Creative Solution</h1>
-                <p>We provide top-notch web development, flyer creation, and bot development services tailored to your business needs. Our expert team is dedicated to delivering innovative solutions that drive success.</p>
-                <a href="#services" class="cta-button">Explore Our Services</a>
-            </section>
-        </div>
-        <div id="services" class="page">
-            <section class="services-section">
-                <h2>Our Services</h2>
-                <div class="services-list">
-                    <div class="service-item">
-                        <h3>Web Development</h3>
-                        <p>We create responsive and functional websites that drive results and provide a great user experience.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3>Flyer Creation</h3>
-                        <p>Our custom flyer designs help your business stand out and effectively communicate your message.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3>Telegram/WhatsApp Bot Development</h3>
-                        <p>We develop bots for Telegram and WhatsApp to automate and streamline your customer interactions.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <div class="carousel">
-            <div class="carousel-slide">
-                <img src="https://telegra.ph/file/ca6f8811862bb1aba2305.jpg" alt="Image 1">
-                <img src="https://telegra.ph/file/794c7d7e1aa92e63fed03.jpg" alt="Image 2">
-                <img src="https://telegra.ph/file/b9e56c04afb468b73690a.jpg" alt="Image 3">
-            </div>
-            <button class="carousel-button prev">Prev</button>
-            <button class="carousel-button next">Next</button>
-        </div>
-        <section class="testimonials">
-            <h2>What Our Clients Say</h2>
-            <div class="testimonial">
-                <p>"Nexus Creative Solution did an amazing job on our website. Highly recommend!"</p>
-                <h4>— Samanatha Boyd</h4>
-            </div>
-            <div class="testimonial">
-                <p>"Great service and fantastic results. Very professional team."</p>
-                <h4>— Archer Mcneish</h4>
-            </div>
-        </section>
-        <section id="trust">
-                <h2>Why Trust Nexus Creative Solution?</h2>
-                <div class="trust-container">
-                    <div class="trust-content">
-                        <div class="trust-item active">
-                            <div class="icon">
-                                <img src="https://telegra.ph/file/21598e474120930a38e0c.jpg" alt="Expertise">
-                            </div>
-                            <h3>Expertise</h3>
-                            <p>Our team comprises skilled professionals with years of experience in web development, flyer creation, and bot development. We stay updated with the latest trends and technologies to ensure your business stands out.</p>
-                        </div>
-                        <div class="trust-item">
-                            <div class="icon">
-                                <img src="https://telegra.ph/file/34c8e720d3d96fa1cd8c0.jpg" alt="Quality Assurance">
-                            </div>
-                            <h3>Quality Assurance</h3>
-                            <p>We are committed to delivering top-notch quality in all our projects. Our thorough testing and quality assurance processes guarantee that you receive only the best services.</p>
-                        </div>
-                        <div class="trust-item">
-                            <div class="icon">
-                                <img src="https://telegra.ph/file/b02a3c57e35f0750eb079.jpg" alt="Customer Satisfaction">
-                            </div>
-                            <h3>Customer Satisfaction</h3>
-                            <p>Your satisfaction is our priority. We work closely with our clients to understand their needs and deliver solutions that exceed their expectations.</p>
-                        </div>
-                        <div class="trust-item">
-                            <div class="icon">
-                                <img src="https://telegra.ph/file/01ea324d2a6d8fe7f3cbc.jpg" alt="Proven Track Record">
-                            </div>
-                            <h3>Proven Track Record</h3>
-                            <p>We have a proven track record of successful projects and satisfied clients. Our portfolio speaks volumes about our capabilities and dedication.</p>
-                        </div>
-                    </div>
-                    <div class="trust-nav">
-                        <button id="prev-btn">Previous</button>
-                        <button id="next-btn">Next</button>
-                    </div>
-                </div>
-            </section>
-        <div class="faq-section">
-            <h3 class="faq-title">Frequently Asked Questions</h3>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>1. What services do you offer?</span>
-                        <span class="plus-icon">+</span>
-                        <span class="minus-icon">−</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We offer a range of services including web development, flyer creation, and Telegram/WhatsApp bot development. Each service is tailored to meet your specific business needs and objectives.</p>
-                    </div>
-                </div>
 
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>2. How long does it take to complete a project?</span>
-                        <span class="plus-icon">+</span>
-                        <span class="minus-icon">−</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>The duration of a project depends on its complexity and scope. Typically, a basic website takes about 4-6 weeks to complete, while more complex projects may take longer. We provide a detailed timeline and milestones at the start of each project.</p>
+    <section id="showcase">
+        <div class="container">
+            <div class="showcase-content">
+                <div class="showcase-content-left">
+                    <div class="showcase-content-title">
+                        <h3>Professional Business Bots, Websites, and More</h3>
                     </div>
+                    <div class="showcase-content-body">
+                        <p>At Nexus Creative Solution, we specialize in creating advanced business bots, engaging websites, and innovative solutions tailored to your business needs.</p>
+                    </div>
+                    <a href="#" class="btn">Get Started</a>
                 </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>3. How much does your service cost?</span>
-                        <span class="plus-icon">+</span>
-                        <span class="minus-icon">−</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Our pricing varies based on the type and scope of the service you require. We offer customized quotes based on your specific needs. Please contact us to get a personalized quote and discuss your project in detail.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>4. Do you offer support after the project is completed?</span>
-                        <span class="plus-icon">+</span>
-                        <span class="minus-icon">−</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes, we offer post-project support to ensure everything runs smoothly. This includes troubleshooting, updates, and maintenance. Support packages are available and can be tailored to your needs.</p>
-                    </div>
+                <div class="showcase-content-right">
+                    <img src="https://candrakriswinarto.github.io/renderonline/img/showcase-images.svg" alt="Nexus Creative Solution Showcase">
                 </div>
             </div>
         </div>
-        
-        
-        <div id="contact" class="page">
-            <section>
-                <h2>Contact Us</h2>
-                <form action="https://formsubmit.co/nexuscreativesolution@gmail.com" method="POST">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+    </section>
 
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required></textarea>
-
-                    <button type="submit">Send</button>
-                </form>
-            </section>
+    <section id="featured">
+        <div class="container">
+            <div class="featured-wrapper">
+                <div class="featured-image right">
+                    <img src="https://candrakriswinarto.github.io/renderonline/img/logo-mobile-img.svg" alt="Nexus Logo">
+                </div>
+                <div class="featured-text left">
+                    <div class="featured-title">
+                        <h3>Why Choose Nexus Creative Solution?</h3>
+                    </div>
+                    <div class="featured-body">
+                        <p>We offer a unique blend of creativity and technical expertise to bring your vision to life, whether through customized bots or dynamic web solutions.</p>
+                    </div>
+                    <a href="#" class="btn featured-logo-btn">Learn More</a>
+                </div>
+            </div>
         </div>
-    </main>
+    </section>
+
+    <section id="testimonial">
+        <div class="container">
+            <div class="testimonial-title">
+                <h3>What Our Clients Say</h3>
+            </div>
+            <div class="testimonial-wrapper">
+                <div class="testimonial-image">
+                    <img src="https://telegra.ph/file/f70249846c5d8e7e31a07.jpg" alt="Client  Testimonial">
+                    <h3>samatha boyd </h3>
+                    <p>first client</p>
+                </div>
+                <div class="testimonial-text">
+                    <p>The poster Nexus Creative Solution designed for me is fantastic! It looks great and clearly communicates my message. I’m thrilled with the result!</p>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-wrapper">
+            <div class="testimonial-image">
+                <img src="https://telegra.ph/file/fbc231c51e2c4310d18c7.jpg" alt="Client Testimonial">
+                <h3>Archer Mcneish</h3>
+                <p>Second Client</p>
+            </div>
+            <div class="testimonial-text">
+                <p>Nexus Creative Solution provided exceptional service in designing my website. The attention to detail and professionalism exceeded my expectations. Highly recommended!</p>
+            </div>
+        </div>
+    </section>
+
+                                                                                                                                         <section class="faq-section">
+                                                                                                                                             <div class="faq-container">
+                                                                                                                                                 <h2>Frequently Asked Questions</h2>
+                                                                                                                                                 <div class="faq-item">
+                                                                                                                                                     <div class="faq-question" onclick="toggleAnswer(this)">
+                                                                                                                                                         <span>What services do you offer?</span>
+                                                                                                                                                         <span class="toggle-icon">+</span>
+                                                                                                                                                     </div>
+                                                                                                                                                     <div class="faq-answer">
+                                                                                                                                                         <p>We offer a range of services including website development, flyer design, and Telegram/WhatsApp bot creation. Our team specializes in creating custom solutions tailored to your business needs.</p>
+                                                                                                                                                     </div>
+                                                                                                                                                 </div>
+                                                                                                                                                 <div class="faq-item">
+                                                                                                                                                     <div class="faq-question" onclick="toggleAnswer(this)">
+                                                                                                                                                         <span>How can I get started with your services?</span>
+                                                                                                                                                         <span class="toggle-icon">+</span>
+                                                                                                                                                     </div>
+                                                                                                                                                     <div class="faq-answer">
+                                                                                                                                                         <p>You can get started by contacting us through our <a href="#contact">contact form</a> or by emailing us at <a href="mailto:nexuscreativesolution@gmail.com">nexuscreativesolution@gmail.com</a>. We will guide you through the process and discuss your requirements.</p>
+                                                                                                                                                     </div>
+                                                                                                                                                 </div>
+                                                                                                                                                 <div class="faq-item">
+                                                                                                                                                     <div class="faq-question" onclick="toggleAnswer(this)">
+                                                                                                                                                         <span>What is the typical turnaround time for a project?</span>
+                                                                                                                                                         <span class="toggle-icon">+</span>
+                                                                                                                                                     </div>
+                                                                                                                                                     <div class="faq-answer">
+                                                                                                                                                         <p>The turnaround time varies depending on the complexity of the project. On average, website development takes 2-4 weeks, while flyer design and bot creation can take 1-2 weeks. We will provide a detailed timeline after discussing your project.</p>
+                                                                                                                                                     </div>
+                                                                                                                                                 </div>
+                                                                                                                                                 <div class="faq-item">
+                                                                                                                                                     <div class="faq-question" onclick="toggleAnswer(this)">
+                                                                                                                                                         <span>Do you offer support after project completion?</span>
+                                                                                                                                                         <span class="toggle-icon">+</span>
+                                                                                                                                                     </div>
+                                                                                                                                                     <div class="faq-answer">
+                                                                                                                                                         <p>Yes, we offer support for a specified period after project completion to ensure everything functions smoothly. For ongoing support, we offer maintenance packages tailored to your needs.</p>
+                                                                                                                                                     </div>
+                                                                                                                                                 </div>
+                                                                                                                                                 <div class="faq-item">
+                                                                                                                                                     <div class="faq-question" onclick="toggleAnswer(this)">
+                                                                                                                                                         <span>Can I make changes to the project after it’s completed?</span>
+                                                                                                                                                         <span class="toggle-icon">+</span>
+                                                                                                                                                     </div>
+                                                                                                                                                     <div class="faq-answer">
+                                                                                                                                                         <p>Yes, you can request changes after the project is completed. We offer revision services, and additional changes can be accommodated based on your needs. Please note that substantial changes may incur extra charges.</p>
+                                                                                                                                                     </div>
+                                                                                                                                                 </div>
+                                                                                                                                                 <div class="faq-item">
+                                                                                                                                                     <div class="faq-question" onclick="toggleAnswer(this)">
+                                                                                                                                                         <span>What is your pricing structure?</span>
+                                                                                                                                                         <span class="toggle-icon">+</span>
+                                                                                                                                                     </div>
+                                                                                                                                                     <div class="faq-answer">
+                                                                                                                                                         <p>Our pricing is based on the scope and complexity of the project. We offer customized quotes to ensure you get the best value for your investment. Please contact us for a detailed quote based on your specific requirements.</p>
+                                                                                                                                                     </div>
+                                                                                                                                                 </div>
+                                                                                                                                                 <div class="faq-item">
+                                                                                                                                                     <div class="faq-question" onclick="toggleAnswer(this)">
+                                                                                                                                                         <span>How do I make a payment?</span>
+                                                                                                                                                         <span class="toggle-icon">+</span>
+                                                                                                                                                     </div>
+                                                                                                                                                     <div class="faq-answer">
+                                                                                                                                                         <p>We accept payments via bank transfer, credit/debit card, and online payment platforms. Details will be provided upon project agreement. We ensure secure and convenient payment options for our clients.</p>
+                                                                                                                                                     </div>
+                                                                                                                                                 </div>
+                                                                                                                                             </div>
+                                                                                                                                         </section>
+        </div>
+    </section>
+    
     <footer>
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h4>About Us</h4>
-                <p>Nexus Creative Solution provides top-notch web development, flyer creation, and bot development services tailored to your business needs.</p>
-                <a href="#about-us" class="footer-link">Learn More</a>
+        <div class="container">
+            <div class="footer-wrapper">
+                <div class="years">
+                    <p>Nexus Creative Solution &copy; 2024</p>
+                </div>
+                <div class="icons">
+                    <a href="/error.html" target="_blank" class="icon-link">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://t.me/TalkWizardBot" target="_blank" class="icon-link">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="https://www.instagram.com/nexus_creative_solution?igsh=dnZ0MTBwNXU5dm8x&utm_source=qr" target="_blank" class="icon-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
             </div>
-
-            <div class="footer-section contact">
-                <h4>Contact Us</h4>
-                <address>
-                    <p> runaway bay 
-                    st ann belle aire 2 </p>
-                    <p>Email: <a href="mailto:info@nexuscreative.com" class="footer-link">info@nexuscreative.com</a></p>
-                    <p>Phone: <a href="tel:+1234567890" class="footer-link">+1 (876) 335-1213</a></p>
-                </address>
-                <a href="#contact" class="footer-link">Contact Form</a>
-            </div>
-
-            <div class="footer-section social">
-                <h4>Follow Us</h4>
-                <a href=" https://www.instagram.com/nexus_creative_solution?igsh=dnZ0MTBwNXU5dm8x&utm_source=qr" class="social-icon" aria-label="instgram">instagram</a>
-                <a href="wa.me/18763351213" class="social-icon" aria-label="whatsapp">whatsapp</a>
-        
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2024 Nexus Creative Solution. All rights reserved.</p>
-            <a href="#privacy-policy" class="footer-link">Privacy Policy</a> | <a href="#terms-of-service" class="footer-link">Terms of Service</a>
         </div>
     </footer>
- 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    // Carousel buttons
-    const prevButton = document.querySelector('.carousel-button.prev');
-    const nextButton = document.querySelector('.carousel-button.next');
-    const carouselSlide = document.querySelector('.carousel-slide');
-    const images = document.querySelectorAll('.carousel-slide img');
-    let counter = 0;
-    const size = images[0].clientWidth;
+  <script>
+      const hamburgerIcon = document.querySelector(".hamburger-icon");
+      const mobileNav = document.querySelector(".nav");
+      let navOpen = true;
 
-    nextButton.addEventListener('click', () => {
-        if (counter >= images.length - 1) return;
-        carouselSlide.style.transition = "transform 0.5s ease-in-out";
-        counter++;
-        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-    });
+      const showNav = () => {
+          if (navOpen) {
+              mobileNav.style.left = "0";
+              navOpen = false;
+          } else {
+              mobileNav.style.left = "-900px";
+              navOpen = true;
+          }
+      };
 
-    prevButton.addEventListener('click', () => {
-        if (counter <= 0) return;
-        carouselSlide.style.transition = "transform 0.5s ease-in-out";
-        counter--;
-        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-    });
+      hamburgerIcon.addEventListener("click", showNav);
 
-    // Mobile menu
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navLinks = document.getElementById('nav-links');
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('.nav ul li a').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+              e.preventDefault();
+              const targetSection = document.querySelector(this.getAttribute('href'));
+              if (targetSection) {
+                  window.scrollTo({
+                      top: targetSection.offsetTop,
+                      behavior: 'smooth'
+                  });
 
-    mobileMenu.addEventListener('click', function() {
-        navLinks.classList.toggle('nav-active');
-        mobileMenu.classList.toggle('toggle');
-    });
+                  // Close the mobile navigation after clicking a link
+                  if (!navOpen) {
+                      showNav();
+                  }
+              }
+          });
+      });
+      
+          function toggleAnswer(element) {
+              const answer = element.nextElementSibling;
+              const isActive = element.classList.toggle('active');
+              answer.style.maxHeight = isActive ? answer.scrollHeight + 'px' : '0';
+          }
+      
 
-    // FAQ questions
-    const faqQuestions = document.querySelectorAll('.faq-question');
-
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-            const parentItem = question.parentElement;
-            const isActive = parentItem.classList.contains('active');
-
-            // Close all other FAQs
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.classList.remove('active');
-            });
-
-            // Open the clicked FAQ if it was not already open
-            if (!isActive) {
-                parentItem.classList.add('active');
-            }
-        });
-    });
-
-    // Trust items
-    const trustItems = document.querySelectorAll('.trust-item');
-    let currentIndex = 0;
-
-    const updateVisibility = () => {
-        trustItems.forEach((item, index) => {
-            item.classList.toggle('active', index === currentIndex);
-        });
-    };
-
-    document.getElementById('next-btn').addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % trustItems.length;
-        updateVisibility();
-    });
-
-    document.getElementById('prev-btn').addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + trustItems.length) % trustItems.length;
-        updateVisibility();
-    });
-
-    // Initial setup
-    updateVisibility();
-});
-    </script>
-
-    <style>
-        #trust {
-    padding: 60px 0;
-    background-color: #f9f9f9;
-    text-align: center;
-}
-
-#trust h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: #333;
-}
-
-.trust-container {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.trust-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-    height: 300px; /* Adjust based on content */
-}
-
-.trust-item {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 80%;
-    max-width: 500px;
-    text-align: left;
-    opacity: 0;
-    position: absolute;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    transform: translateY(20px);
-}
-
-.trust-item.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.trust-item .icon {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.trust-item img {
-    max-width: 50px;
-    height: auto;
-}
-
-.trust-item h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.trust-item p {
-    color: #666;
-    line-height: 1.6;
-}
-
-.trust-nav {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.trust-nav button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.trust-nav button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-    </style>
+    
+  </script>
 </body>
 </html>
