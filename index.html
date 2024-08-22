@@ -161,7 +161,24 @@
                                                                                                                                          </section>
         </div>
     </section>
-    
+        <div class="chatbot-widget">
+        <div class="chatbot-icon" id="chatbotIcon">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chatbot-popup" id="chatbotPopup">
+            <div class="chatbot-header">
+                <h4>Chat with Nexus Creative Solution!</h4>
+                <span class="close-btn" id="closeChatbot">&times;</span>
+            </div>
+            <div class="chatbot-body">
+                <div id="chatbotMessages">
+                    <p>Hi! How can we assist you today? Type 'help' for available commands.</p>
+                </div>
+                <input type="text" id="chatInput" placeholder="Type your message..." />
+                <button id="sendBtn">Send</button>
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="container">
             <div class="footer-wrapper">
@@ -183,6 +200,86 @@
         </div>
     </footer>
   <script>
+   // Get elements
+      const chatbotIcon = document.getElementById("chatbotIcon");
+      const chatbotPopup = document.getElementById("chatbotPopup");
+      const closeChatbot = document.getElementById("closeChatbot");
+      const sendBtn = document.getElementById("sendBtn");
+      const chatInput = document.getElementById("chatInput");
+      const chatbotMessages = document.getElementById("chatbotMessages");
+
+      // Toggle chatbot popup on icon click
+      chatbotIcon.addEventListener("click", () => {
+          chatbotPopup.style.display = chatbotPopup.style.display === "block" ? "none" : "block";
+      });
+
+      // Close chatbot popup when the close button is clicked
+      closeChatbot.addEventListener("click", () => {
+          chatbotPopup.style.display = "none";
+      });
+
+      // Handle commands when "Send" button is pressed
+      sendBtn.addEventListener("click", handleUserMessage);
+      chatInput.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+              e.preventDefault();
+              handleUserMessage();
+          }
+      });
+
+      function handleUserMessage() {
+          const userMessage = chatInput.value.trim();
+
+          // Prevent empty message sending
+          if (!userMessage) return;
+
+          // Append user's message to chat
+          addMessage("You", userMessage);
+
+          // Clear input after message is sent
+          chatInput.value = "";
+
+          // Handle chatbot response based on commands
+          let botResponse;
+          switch (userMessage.toLowerCase()) {
+              case 'help':
+                  botResponse = "Available commands: 'services', 'pricing', 'contact'.";
+                  break;
+              case 'services':
+                  botResponse = "We offer website development, flyer design, and bot creation.";
+                  break;
+              case 'pricing':
+                  botResponse = "Our pricing can depends on the coplexity of the project. please contact us for more details";
+                  break;
+              case 'contact':
+                  botResponse = "You can contact us at nexuscreativesolution@gmail.com or call +1876 335 1213.";
+                  break;
+              case 'hi':
+                  botResponse = "Hello! How can i assist you today? type help."
+                  break;
+              default:
+                  botResponse = "Sorry, I don't understand that command. Type 'help' for available commands.";
+                  break;
+              
+                  
+          }
+          
+
+          // Append chatbot's response to chat
+          setTimeout(() => {
+              addMessage("Bot", botResponse);
+          }, 500);  // Simulate bot's typing delay
+      }
+
+      // Function to append messages to chat
+      function addMessage(sender, message) {
+          const messageElem = document.createElement("p");
+          messageElem.innerHTML = `<strong>${sender}:</strong> ${message}`;
+          chatbotMessages.appendChild(messageElem);
+          chatbotMessages.scrollTop = chatbotMessages.scrollHeight;  // Auto-scroll to the latest message
+      }
+
+    
       const hamburgerIcon = document.querySelector(".hamburger-icon");
       const mobileNav = document.querySelector(".nav");
       let navOpen = true;
