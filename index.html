@@ -21,6 +21,8 @@
               <li><a href="#projects">Projects</a></li>
               <li><a href="#testimonial">Testimonials</a></li>
               <li><a href="#contact">Contact</a></li>
+
+              <li><a href="#" id="review-link">Reviews</a></li>
           </ul>
       </div>
     </header>
@@ -161,7 +163,8 @@
                                                                                                                                          </section>
         </div>
     </section>
-        <div class="chatbot-widget">
+
+    <div class="chatbot-widget">
         <div class="chatbot-icon" id="chatbotIcon">
             <i class="fas fa-comments"></i>
         </div>
@@ -179,6 +182,7 @@
             </div>
         </div>
     </div>
+
     <footer>
         <div class="container">
             <div class="footer-wrapper">
@@ -186,7 +190,7 @@
                     <p>Nexus Creative Solution &copy; 2024</p>
                 </div>
                 <div class="icons">
-                    <a href="https://nexuscreativesolution.github.io/Error.html/" target="_blank" class="icon-link">
+                    <a href="/error.html" target="_blank" class="icon-link">
                         <i class="fab fa-whatsapp"></i>
                     </a>
                     <a href="https://t.me/TalkWizardBot" target="_blank" class="icon-link">
@@ -198,15 +202,86 @@
                 </div>
             </div>
         </div>
-    </footer>
+    <!-- Review Section (Initially Hidden) -->
+    <div id="review-section" class="overlay">
+        <div class="review-content">
+            <span class="close-btn">&times;</span>
+            <h2>Customer Reviews</h2>
+
+            <!-- Review Form -->
+            <form id="reviewForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required><br>
+
+                <label for="rating">Rating:</label>
+                <div id="star-rating">
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5" class="star">&#9733;</label>
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4" class="star">&#9733;</label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3" class="star">&#9733;</label>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2" class="star">&#9733;</label>
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1" class="star">&#9733;</label>
+                </div><br>
+
+                <label for="message">Review:</label>
+                <textarea id="message" required></textarea><br>
+
+                <button type="submit">Submit Review</button>
+            </form>
+
+            <!-- Display Reviews -->
+            <div id="reviewsContainer">
+                <h3>All Reviews</h3>
+                <div id="reviews">
+                    <!-- Existing reviews will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
   <script>
-   // Get elements
-      const chatbotIcon = document.getElementById("chatbotIcon");
-      const chatbotPopup = document.getElementById("chatbotPopup");
-      const closeChatbot = document.getElementById("closeChatbot");
-      const sendBtn = document.getElementById("sendBtn");
-      const chatInput = document.getElementById("chatInput");
-      const chatbotMessages = document.getElementById("chatbotMessages");
+
+      // Show the review section when the "Reviews" link is clicked
+      document.getElementById('review-link').addEventListener('click', function(event) {
+          event.preventDefault();
+          document.getElementById('review-section').style.display = 'block';
+      });
+
+      // Close the review section when the close button is clicked
+      document.querySelector('.close-btn').addEventListener('click', function() {
+          document.getElementById('review-section').style.display = 'none';
+      });
+
+      // Handle review form submission
+      document.getElementById('reviewForm').addEventListener('submit', function(event) {
+          event.preventDefault();
+
+          // Get form values
+          const name = document.getElementById('name').value;
+          const rating = document.querySelector('input[name="rating"]:checked')?.value;
+          const message = document.getElementById('message').value;
+
+          if (!rating) {
+              alert('Please select a rating.');
+              return;
+          }
+
+          // Create new review element
+          const reviewElement = document.createElement('div');
+          reviewElement.innerHTML = `<strong>${name}</strong> - Rating: ${rating}/5
+                                     <p>${message}</p>`;
+          reviewElement.classList.add('review');
+
+          // Append new review to the reviews container
+          document.getElementById('reviews').appendChild(reviewElement);
+
+          // Clear the form
+          event.target.reset();
+      });
 
       // Toggle chatbot popup on icon click
       chatbotIcon.addEventListener("click", () => {
@@ -279,7 +354,7 @@
           chatbotMessages.scrollTop = chatbotMessages.scrollHeight;  // Auto-scroll to the latest message
       }
 
-    
+      
       const hamburgerIcon = document.querySelector(".hamburger-icon");
       const mobileNav = document.querySelector(".nav");
       let navOpen = true;
@@ -320,8 +395,29 @@
               const isActive = element.classList.toggle('active');
               answer.style.maxHeight = isActive ? answer.scrollHeight + 'px' : '0';
           }
-      
 
+
+      
+      const overlay = document.querySelector('.overlay');
+      const closeBtn = document.querySelector('.close-btn');
+
+      // Function to open overlay and prevent background scrolling
+      function openOverlay() {
+          overlay.style.display = 'block';
+          document.body.classList.add('no-scroll'); // Prevent background scroll
+      }
+
+      // Function to close overlay and restore background scrolling
+      function closeOverlay() {
+          overlay.style.display = 'none';
+          document.body.classList.remove('no-scroll'); // Re-enable background scroll
+      }
+
+      // Event listeners for opening and closing the overlay
+      closeBtn.addEventListener('click', closeOverlay);
+
+      // Example of opening the overlay (you can bind this to a button click)
+      document.querySelector('.open-review').addEventListener('click', openOverlay);
     
   </script>
 </body>
