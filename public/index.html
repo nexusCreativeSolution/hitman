@@ -255,34 +255,7 @@
       document.querySelector('.close-btn').addEventListener('click', function() {
           document.getElementById('review-section').style.display = 'none';
       });
-/*
-      // Handle review form submission
-      document.getElementById('reviewForm').addEventListener('submit', function(event) {
-          event.preventDefault();
 
-          // Get form values
-          const name = document.getElementById('name').value;
-          const rating = document.querySelector('input[name="rating"]:checked')?.value;
-          const message = document.getElementById('message').value;
-
-          if (!rating) {
-              alert('Please select a rating.');
-              return;
-          }
-
-          // Create new review element
-          const reviewElement = document.createElement('div');
-          reviewElement.innerHTML = `<strong>${name}</strong> - Rating: ${rating}/5
-                                     <p>${message}</p>`;
-          reviewElement.classList.add('review');
-
-          // Append new review to the reviews container
-          document.getElementById('reviews').appendChild(reviewElement);
-
-          // Clear the form
-          event.target.reset();
-      });
-*/
 document.getElementById('reviewForm').addEventListener('submit', async function(event) {
     event.preventDefault();
 
