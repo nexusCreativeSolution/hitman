@@ -750,4 +750,124 @@ footer {
 .chatbot-body button:hover {
     background-color: #45a049;
 }
+/* Overlay Styling */
+/* Overlay Styling */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ensure full viewport width */
+    height: 100vh; /* Ensure full viewport height */
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    overflow-y: auto; /* Allow overlay content to be scrollable if necessary */
+}
+
+/* Review Content Styling */
+.review-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    margin: 15% auto; /* Adjust margin for proper spacing */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    color: #333;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Close Button Styling */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #000;
+}
+
+/* Star Rating Styling */
+#star-rating {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.star {
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked ~ .star {
+    color: #f39c12;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+/* Form and Review Display Styling */
+form {
+    margin: 20px 0;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+#reviewsContainer {
+    margin-top: 30px;
+}
+
+#reviews {
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* Responsive Styling */
+@media (min-width: 768px) {
+    .review-content {
+        width: 60%; /* Wider width for larger screens */
+        margin: 5% auto; /* Adjusted margin for desktop */
+    }
+}
+
+@media (max-width: 768px) {
+    .review-content {
+        width: 90%; /* Fit content within the screen on smaller devices */
+        margin: 10% auto; /* More margin for smaller screens */
+    }
+
+    .close-btn {
+        font-size: 24px; /* Smaller close button for smaller screens */
+    }
+}
+
+
+.no-scroll {
+    overflow: hidden; /* Disables scrolling on the body */
+}
+
 
