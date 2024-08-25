@@ -198,6 +198,109 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Review Submission Section */}
+      <section id='review-section' className='bg-gray-100 py-16'>
+        <div className='container mx-auto px-6'>
+          <h3 className='text-3xl font-bold text-gray-800 text-center mb-8'>
+            Share Your Experience
+          </h3>
+
+          <div className='max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6 space-y-6'>
+            {/* Interactive Rating */}
+            <div className='text-center'>
+              <h4 className='text-lg font-semibold text-gray-800 mb-2'>
+                Rate Us
+              </h4>
+              <div className='flex justify-center space-x-2 text-yellow-400'>
+                {[...Array(5)].map((_, index) => (
+                  <span key={index} className='cursor-pointer text-3xl'>
+                    &#9733;
+                  </span> // Star rating
+                ))}
+              </div>
+            </div>
+
+            {/* Interactive Text Area */}
+            <div className='text-center'>
+              <h4 className='text-lg font-semibold text-gray-800 mb-2'>
+                Leave a Review
+              </h4>
+              <div
+                className='bg-gray-100 rounded-lg p-4 text-gray-600 cursor-text'
+                contentEditable='true'
+                placeholder='Click to start typing your review...'
+                style={{ minHeight: '100px' }}
+              ></div>
+            </div>
+
+            {/* Submit Button */}
+            <div className='text-center'>
+              <button className='bg-indigo-600 text-white py-2 px-6 rounded-lg hover:bg-indigo-700 transition'>
+                Submit Review
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id='contact' className='bg-white py-16'>
+        <div className='container mx-auto px-6'>
+          <h3 className='text-3xl font-bold text-gray-800 text-center mb-8'>
+            Get In Touch
+          </h3>
+          <div className='max-w-2xl mx-auto bg-gray-100 p-8 rounded-lg shadow-lg space-y-6'>
+            {/* Name Input */}
+            <div>
+              <label className='block text-lg font-semibold text-gray-800 mb-2'>
+                Name
+              </label>
+              <div className='bg-white rounded-lg p-4 text-gray-600 cursor-text border border-gray-300 focus-within:border-indigo-600'>
+                <input
+                  type='text'
+                  placeholder='Enter your name'
+                  className='w-full focus:outline-none'
+                />
+              </div>
+            </div>
+
+            {/* Email Input */}
+            <div>
+              <label className='block text-lg font-semibold text-gray-800 mb-2'>
+                Email
+              </label>
+              <div className='bg-white rounded-lg p-4 text-gray-600 cursor-text border border-gray-300 focus-within:border-indigo-600'>
+                <input
+                  type='email'
+                  placeholder='Enter your email'
+                  className='w-full focus:outline-none'
+                />
+              </div>
+            </div>
+
+            {/* Message Input */}
+            <div>
+              <label className='block text-lg font-semibold text-gray-800 mb-2'>
+                Message
+              </label>
+              <div className='bg-white rounded-lg p-4 text-gray-600 cursor-text border border-gray-300 focus-within:border-indigo-600'>
+                <textarea
+                  placeholder='Write your message here...'
+                  className='w-full h-32 resize-none focus:outline-none'
+                ></textarea>
+              </div>
+            </div>
+
+            {/* Submit Button */}
+            <div className='text-center'>
+              <button className='bg-indigo-600 text-white py-2 px-6 rounded-lg hover:bg-indigo-700 transition'>
+                Send Message
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className='bg-gray-800 text-gray-200 py-6'>
         <div className='container mx-auto text-center'>
